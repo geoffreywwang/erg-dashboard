@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "erg-dashboard-backend"
+name = "erg-dashboard"
 version = "0.1.0"
 description = ""
 authors = ["geoffreywwang <geoffreywwang@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 Flask = "^1.1.2"
 Flask-SocketIO = "^5.0.1"
-gevent = "^21.1.2"
-gevent-websocket = "^0.10.1"
+eventlet = "^0.30.1"
+odrive = "0.5.1"
 
 [tool.poetry.dev-dependencies]
 

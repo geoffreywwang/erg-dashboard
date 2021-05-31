@@ -1,31 +1,49 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public",
-    "validate": "svelte-check"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
-    "@rollup/plugin-typescript": "^8.2.0",
-    "@tsconfig/svelte": "^1.0.0",
-    "rollup": "^2.3.4",
-    "rollup-plugin-css-only": "^3.1.0",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0",
-    "svelte-check": "^1.1.35",
-    "svelte-preprocess": "^4.6.9",
-    "tslib": "^2.0.0",
-    "typescript": "^4.1.5"
-  },
+  "name": "erg-dashboard-frontend",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@types/chart.js": "^2.9.30",
-    "sirv-cli": "^1.0.0",
-    "svelte-chartjs": "^1.0.1"
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.3",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^12.20.4",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@types/socket.io-client": "^1.4.35",
+    "chart.js": "^2.9.4",
+    "react": "^17.0.1",
+    "react-chartjs-2": "^2.11.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.3",
+    "socket.io-client": "^3.1.1",
+    "typescript": "^4.2.2",
+    "web-vitals": "^1.1.0"
+  },
+  "scripts": {
+    "start": "BROWSER='Brave' react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
