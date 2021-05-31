@@ -1,9 +1,7 @@
-from flask_socketio import SocketIO, emit
 import eventlet
 
-import odrive
-from odrive.enums import *
 from odrive.utils import *
+
 
 class ControlWorker(object):
     def __init__(self, socketio, odrv0):
@@ -56,11 +54,10 @@ class ControlWorker(object):
 
     def set_closed_loop(self):
         self.odrv0.axis1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
-        if self.isRunning == False:
+        if not self.isRunning:
             self.socketio.start_background_task(target=self.do_work)
         print('Odrive: Closed loop')
     
     def clear_errors(self):
         self.odrv0.axis1.error = 0
         print('Odrive: Cleared errors')
-        

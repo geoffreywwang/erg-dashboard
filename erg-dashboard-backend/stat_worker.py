@@ -1,10 +1,7 @@
-from flask_socketio import SocketIO, emit
 import eventlet
 
-import odrive
-from odrive.enums import *
-
 from datetime import datetime
+
 
 class StatWorker(object):
     def __init__(self, socketio, odrv0):
@@ -27,12 +24,6 @@ class StatWorker(object):
                 'voltage': self.odrv0.vbus_voltage,
                 'current': self.odrv0.ibus
             }
-            # stats = {
-            #     'time': datetime.now().timestamp() * 1000,
-            #     'velocity': 5,
-            #     'torque': 4,
-            #     'voltage': 2
-            # }
             self.socketio.emit('stats', stats)
             eventlet.sleep(0.03)
 
@@ -40,7 +31,7 @@ class StatWorker(object):
         self.isRunning = False
 
     def start_stats(self):
-        if self.isRunning == False:
+        if not self.isRunning:
             self.socketio.start_background_task(target=self.do_work)
 
     def stop_stats(self):
